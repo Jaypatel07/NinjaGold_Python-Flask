@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" type="text/css" href= "../static/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="gold_bar">
+            <p name="score">Your Gold: {{session['score']}}</p>
+        </div>
+        <div class="farm">
+            <h1>Farm</h1>
+            <p> earns 10-20 golds</p>
+            <form action="/process_money" method="POST">
+                <input type="hidden" name="building" value="farm" />
+                <input type="submit" value="Find Gold!"/>
+            </form>
+        </div>
+        <div class="house">
+            <h1>House</h1>
+            <p> earns 5-10 golds</p>
+            <form action="/process_money" method="POST">
+                <input type="hidden" name="building" value="house" />
+                <input type="submit" value="Find Gold!"/>
+            </form>
+        </div>
+        <div class="cave">
+            <h1>Cave</h1>
+            <p> earns 2-5 golds</p>
+            <form action="/process_money" method="POST">
+                <input type="hidden" name="building" value="cave" />
+                <input type="submit" value="Find Gold!"/>
+            </form>
+        </div>
+        <div class="casino">
+            <h1>Casino</h1>
+            <p> earns/takes 0-50 golds</p>
+            <form action="/process_money" method="POST">
+                <input type="hidden" name="building" value="casino" />
+                <input type="submit" value="Find Gold!"/>
+            </form>
+        </div>
+        <form action="/reset" method="POST">
+            <input type="submit" value="reset">
+        </form>
+    </div>
+</body>
+</html>
